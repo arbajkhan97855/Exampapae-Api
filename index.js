@@ -29,28 +29,28 @@ app.get("/users",async(req,res)=>{
 
 app.get("/scorecard",async(req,res)=>{
     const datta = await Sschema.find();
-    res.json(datta)
+    res.send({datta})
 })
 
 app.get("/question",async(req,res)=>{
     const datta = await Qschema.find();
-    res.json(datta)
+    res.send({datta})
 })
 
 //  paramiter
 app.get("/users/:id",async(req,res)=>{
     const datta = await Uschema.findOne({"_id" : req.params.id});
-    res.json(datta)
+    res.send({datta})
 })
 
 app.get("/scorecard/:id",async(req,res)=>{
     const datta = await Sschema.findOne({"_id" : req.params.id});
-    res.json(datta)
+    res.send({datta})
 })
 
 app.get("/question/:id",async(req,res)=>{
     const datta = await Qschema.findOne({"_id" : req.params.id});
-    res.json(datta)
+    res.send({datta})
 })
 
 // POST
