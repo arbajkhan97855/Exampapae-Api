@@ -1,0 +1,13 @@
+const mongoose = require("mongoose")
+
+const Mongo = mongoose.connect("mongodb+srv://pathanarbaj03328:HMBROJiWe5kzB5XW@cluster0.3pqmoz2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{
+    family:4,
+    useNewUrlParser : true,
+    useUnifiedTopology : true,
+}).then(()=>{
+    console.log("connect mongoose with mongodb")
+}).catch(()=>{
+    console.log("canoot connect mongoose with mongodb !")
+})
+"mongodb+srv://ashishkumawat685:Ashish%402001@cluster0.jy87iul.mongodb.net/userlive?retryWrites=true&w=majority";
+
