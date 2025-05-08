@@ -16,7 +16,7 @@ app.get("/",async(req,res)=>{
     const udatta = await Uschema.find();
     const sdatta = await Sschema.find();
     const qdatta = await Qschema.find();
-    res.json({ "users" : udatta,
+    res.send({ "users" : udatta,
                "question" : qdatta,
                "scorecard" : sdatta
     })
@@ -24,7 +24,7 @@ app.get("/",async(req,res)=>{
 
 app.get("/users",async(req,res)=>{
     const datta = await Uschema.find();
-    res.json(datta)
+    res.send({datta})
 })
 
 app.get("/scorecard",async(req,res)=>{
