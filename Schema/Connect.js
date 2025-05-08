@@ -9,5 +9,5 @@ const Mongo = mongoose.connect("mongodb+srv://pathanarbaj03328:HMBROJiWe5kzB5XW@
 }).catch(()=>{
     console.log("canoot connect mongoose with mongodb !")
 })
-"mongodb+srv://ashishkumawat685:Ashish%402001@cluster0.jy87iul.mongodb.net/userlive?retryWrites=true&w=majority";
+
 
