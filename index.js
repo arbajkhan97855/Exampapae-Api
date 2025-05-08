@@ -40,17 +40,17 @@ app.get("/question",async(req,res)=>{
 //  paramiter
 app.get("/users/:id",async(req,res)=>{
     const datta = await Uschema.findOne({"_id" : req.params.id});
-    res.send(datta)
+    res.json(datta)
 })
 
 app.get("/scorecard/:id",async(req,res)=>{
     const datta = await Sschema.findOne({"_id" : req.params.id});
-    res.send(datta)
+    res.json(datta)
 })
 
 app.get("/question/:id",async(req,res)=>{
     const datta = await Qschema.findOne({"_id" : req.params.id});
-    res.send(datta)
+    res.json(datta)
 })
 
 // POST
