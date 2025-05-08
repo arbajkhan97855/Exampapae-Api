@@ -117,7 +117,7 @@ app.patch("/users/:id", async (req, res) => {
 
 app.patch("/scorecard/:id", async (req, res) => {
     const datta = await Sschema.findByIdAndUpdate(req.params.id, req.body);
-    const updatedata = res.send(datta);
+    const updatedata = res.json(datta);
     if(updatedata){
         res.status(200).json({
             message : "succefull data edit"
@@ -129,7 +129,7 @@ app.patch("/scorecard/:id", async (req, res) => {
 
 app.patch("/question/:id", async (req, res) => {
     const datta = await Qschema.findByIdAndUpdate(req.params.id, req.body);
-    const updatedata = res.send(datta);
+    const updatedata = res.json(datta);
     if(updatedata){
         res.status(200).json({
             message : "succefull data edit"
