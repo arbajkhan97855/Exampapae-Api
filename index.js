@@ -6,6 +6,8 @@ const connectdata = require("./Schema/Connect")
 const Qschema = require("./Schema/QuestionSchema")
 const Sschema = require("./Schema/ScorecartSchema")
 const Uschema = require("./Schema/UsersSchema")
+const Env = require('dotenv').config();
+
 app.use(bodyparser.json())
 app.use(cors(origin = "*"))
 const port = 5000
