@@ -44,8 +44,8 @@ app.get("/users/:id",async(req,res)=>{
 })
 
 app.get("/scorecard/:id",async(req,res)=>{
-    const datta = await Sschema.findOne({"_id" : req.params.id});
-    res.json(datta)
+    const datta = await Sschema.findOne({"userId" : req.params.id});
+    res.send(datta)
 })
 
 app.get("/question/:id",async(req,res)=>{
@@ -129,7 +129,7 @@ app.patch("/scorecard/:id", async (req, res) => {
 
 app.patch("/question/:id", async (req, res) => {
     const datta = await Qschema.findByIdAndUpdate(req.params.id, req.body);
-    const updatedata = res.json(datta);
+    const updatedata = res.send(datta);
     if(updatedata){
         res.status(200).json({
             message : "succefull data edit"
