@@ -44,7 +44,7 @@ app.get("/users/:id",async(req,res)=>{
 })
 
 app.get("/scorecard/:id",async(req,res)=>{
-    const datta = await Sschema.findOne({"userId" : req.params.id});
+    const datta = await Sschema.findOne({"_id" : req.params.id});
     res.send(datta)
 })
 
