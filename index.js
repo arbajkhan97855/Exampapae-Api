@@ -73,6 +73,7 @@ app.post("/users",async(req,res)=>{
 
 app.post("/scorecard",async(req,res)=>{
     const mydata = new Sschema();
+    mydata._id = req.body._id;
     mydata.jsscoral = req.body.jsscoral;
     mydata.reactscore = req.body.reactscore;   
     const datavalue = await mydata.save()
