@@ -16,7 +16,7 @@ app.get("/",async(req,res)=>{
     const udatta = await Uschema.find();
     const sdatta = await Sschema.find();
     const qdatta = await Qschema.find();
-    res.send({ "users" : udatta,
+    res.json({ "users" : udatta,
                "question" : qdatta,
                "scorecard" : sdatta
     })
@@ -24,33 +24,33 @@ app.get("/",async(req,res)=>{
 
 app.get("/users",async(req,res)=>{
     const datta = await Uschema.find();
-    res.send(datta)
+    res.json(datta)
 })
 
 app.get("/scorecard",async(req,res)=>{
     const datta = await Sschema.find();
-    res.send(datta)
+    res.json(datta)
 })
 
 app.get("/question",async(req,res)=>{
     const datta = await Qschema.find();
-    res.send(datta)
+    res.json(datta)
 })
 
 //  paramiter
 app.get("/users/:id",async(req,res)=>{
     const datta = await Uschema.findOne({"_id" : req.params.id});
-    res.send(datta)
+    res.json(datta)
 })
 
 app.get("/scorecard/:id",async(req,res)=>{
     const datta = await Sschema.findOne({"_id" : req.params.id});
-    res.send(datta)
+    res.json(datta)
 })
 
 app.get("/question/:id",async(req,res)=>{
     const datta = await Qschema.findOne({"_id" : req.params.id});
-    res.send(datta)
+    res.json(datta)
 })
 
 // POST
@@ -60,7 +60,6 @@ app.post("/users",async(req,res)=>{
     mydata.email = req.body.email;
     mydata.number = req.body.number;
     mydata.password = req.body.password;
-    mydata.useimage = req.body.useimage;
 
     const datavalue = await mydata.save()
     if(datavalue){
